@@ -47,7 +47,7 @@ import com.rayaisse.healthcareapp.design_component.BasicDropdown
 import com.rayaisse.healthcareapp.utils.DeviceConfiguration
 
 @Composable
-fun LoginScreen(modifier: Modifier = Modifier) {
+fun LoginScreen(modifier: Modifier = Modifier,onNavigateToDashboardScreen:()->Unit) {
     var nom by remember { mutableStateOf("") }
     var prenom by remember { mutableStateOf("") }
     var contact by remember { mutableStateOf("") }
@@ -106,7 +106,8 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                         onSpecialiteChange = { specialite = it },
                         motDePasse = motDePasse,
                         onMotDePasseChange = { motDePasse = it },
-                        modifier = Modifier.verticalScroll(rememberScrollState())
+                        modifier = Modifier.verticalScroll(rememberScrollState()),
+                        onNavigateToDashboardScreen = onNavigateToDashboardScreen
                     )
                 }
 
@@ -154,6 +155,7 @@ fun LoginScreen(modifier: Modifier = Modifier) {
                         onSpecialiteChange = { specialite = it },
                         motDePasse = motDePasse,
                         onMotDePasseChange = { motDePasse = it },
+                        onNavigateToDashboardScreen = onNavigateToDashboardScreen,
                         modifier = Modifier.verticalScroll(rememberScrollState())
                     )
                 }
@@ -188,7 +190,7 @@ fun LoginFormSection(
     onSpecialiteChange: (String) -> Unit,
     motDePasse: String,
     onMotDePasseChange: (String) -> Unit,
-
+    onNavigateToDashboardScreen:()->Unit,
     ) {
 
     Column(
@@ -275,7 +277,7 @@ fun LoginFormSection(
         Spacer(modifier = Modifier.height(24.dp))
         AppButton(
             text = "Créer un compte",
-            onClick = {},
+            onClick = {onNavigateToDashboardScreen()},
             modifier = Modifier.fillMaxWidth()
         )
 
@@ -309,5 +311,5 @@ fun LoginHeaderSection(modifier: Modifier = Modifier) {
 @Composable
 @Preview(showBackground = true)
 fun LoginScreenPreview(modifier: Modifier = Modifier) {
-    LoginScreen()
+    LoginScreen(onNavigateToDashboardScreen = {})
 }

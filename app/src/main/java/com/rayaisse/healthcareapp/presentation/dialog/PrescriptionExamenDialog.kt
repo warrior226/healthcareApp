@@ -26,8 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.rayaisse.healthcareapp.data.Constante
-import com.rayaisse.healthcareapp.data.Consultation
+import com.rayaisse.healthcareapp.data.model.Consultation
 import com.rayaisse.healthcareapp.design_component.AppButton
 import com.rayaisse.healthcareapp.design_component.PresciptionForm
 
@@ -61,6 +60,37 @@ fun PrescriptionExamenDialog(
                 color = MaterialTheme.colorScheme.primary,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center
+            )
+            Text(
+                modifier = Modifier.fillMaxWidth().background(color = MaterialTheme.colorScheme.primary),
+                text = "IDENTITE DU PATIENT",
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center
+            )
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "Nom: OUEDRAOGO ",
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start
+            )
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "Prenom(s): Harouna",
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start
+            )
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "Genre: Masculin",
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start
+            )
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = "Contact: 65272164",
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Start
             )
             LazyColumn(
                 modifier = Modifier

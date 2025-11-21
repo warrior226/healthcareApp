@@ -1,4 +1,4 @@
-package com.rayaisse.healthcareapp.data
+package com.rayaisse.healthcareapp.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -14,5 +14,6 @@ data class Disponibilite(
     var medecinId:Int=0,
     var dateDisponibilite:String="",
     var heureDebut:String="",
-    var heureFin:String=""
+    var heureFin:String="",
+    var dateCreation:String=""
 ): Parcelable

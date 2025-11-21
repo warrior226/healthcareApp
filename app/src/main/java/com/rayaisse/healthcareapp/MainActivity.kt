@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.rayaisse.healthcareapp.navigation.AppNavigation
 import com.rayaisse.healthcareapp.presentation.DashBoardScreen
 import com.rayaisse.healthcareapp.presentation.LoginScreen
 import com.rayaisse.healthcareapp.ui.theme.HealthcareAppTheme
@@ -22,7 +23,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             HealthcareAppTheme {
                 //LoginScreen()
-                DashBoardScreen()
+                //DashBoardScreen()
+                AppNavigation()
             }
         }
     }

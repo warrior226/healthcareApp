@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.RemoveRedEye
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -26,9 +25,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.rayaisse.healthcareapp.data.Constante
-import com.rayaisse.healthcareapp.data.Consultation
-import com.rayaisse.healthcareapp.data.Rdv
+import com.rayaisse.healthcareapp.data.model.Constante
+import com.rayaisse.healthcareapp.data.model.Consultation
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Locale

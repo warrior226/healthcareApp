@@ -44,8 +44,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.rayaisse.healthcareapp.data.Constante
-import com.rayaisse.healthcareapp.data.Consultation
+import com.rayaisse.healthcareapp.data.model.Constante
+import com.rayaisse.healthcareapp.data.model.Consultation
 import com.rayaisse.healthcareapp.design_component.ConsultationItem
 import com.rayaisse.healthcareapp.presentation.dialog.PrescriptionExamenDialog
 import com.rayaisse.healthcareapp.utils.DeviceConfiguration
@@ -62,10 +62,10 @@ fun ConsultationScreen(modifier: Modifier = Modifier) {
 
     val items= listOf(
         Consultation(dateConsultation =LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "9h30", motifConsultation = "Maux de tête et maux de ventre", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Maux de tête , maux de ventre", traitementEnCours = "Paracetamol", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
-        Consultation(dateConsultation =LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "9h30", motifConsultation = "Maux de tête et maux de ventre", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Maux de tête , maux de ventre", traitementEnCours = "Paracetamol", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
-        Consultation(dateConsultation =LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "9h30", motifConsultation = "Maux de tête et maux de ventre", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Maux de tête , maux de ventre", traitementEnCours = "Paracetamol", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
-        Consultation(dateConsultation =LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "9h30", motifConsultation = "Maux de tête et maux de ventre", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Maux de tête , maux de ventre", traitementEnCours = "Paracetamol", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
-        Consultation(dateConsultation =LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "9h30", motifConsultation = "Maux de tête et maux de ventre", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Maux de tête , maux de ventre", traitementEnCours = "Paracetamol", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)))
+        Consultation(dateConsultation =LocalDate.now().plusDays(1).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "9h30", motifConsultation = "Maux de tête et maux de ventre", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Maux de tête , maux de ventre", traitementEnCours = "Paracetamol,Albendazol", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().plusDays(4).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
+        Consultation(dateConsultation =LocalDate.now().plusDays(2).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "13h30", motifConsultation = "Vomissement et diarrhée", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Diarrhée , Vomissement", traitementEnCours = "Argilux,Albendazole", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().plusDays(5).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
+        Consultation(dateConsultation =LocalDate.now().plusDays(3).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "10h00", motifConsultation = "fatigue et insomnie", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Fatigue , insomnie", traitementEnCours = "Vitamine C", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().plusDays(6).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH))),
+        Consultation(dateConsultation =LocalDate.now().plusDays(4).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureConsultation = "12h00", motifConsultation = "Perte d'appetie et perte de poids", antecedentMedicaux = "RAS", antecedentFamiliaux = "RAS", allergies = "RAS", symptomes = "Perte d'appetit , perte de poids", traitementEnCours = "Fenugrec", observation = "RAS", recommandation = "Repos pendant quelques jours", dateProchaineVisite = LocalDate.now().plusDays(7).format( DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)))
     )
     val constante= Constante(
         poids = "80",
@@ -162,7 +162,7 @@ fun ConsultationScreen(modifier: Modifier = Modifier) {
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Text(
-                                        text = "100", // Replace with your actual rdv count
+                                        text = "7", // Replace with your actual rdv count
                                         style = MaterialTheme.typography.labelSmall,
                                         color = MaterialTheme.colorScheme.onError,
                                         fontWeight = FontWeight.Bold

@@ -1,4 +1,4 @@
-package com.rayaisse.healthcareapp.data
+package com.rayaisse.healthcareapp.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -18,6 +18,7 @@ data class Constante(
     var tensionDiastolique:String="",
     var frequenceCardiaque:String="",
     var frequenceRespiratoire:String="",
-    var groupeSanguin:String=""
+    var groupeSanguin:String="",
+    var dateCreation:String=""
 
 ): Parcelable

@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.rayaisse.healthcareapp.data.model.Rdv
+import com.rayaisse.healthcareapp.data.model.Examen
 import com.rayaisse.healthcareapp.design_component.AppButton
 import com.rayaisse.healthcareapp.design_component.ConstanteForm
 import com.rayaisse.healthcareapp.design_component.ConsultationForm
@@ -36,9 +36,9 @@ import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ConsultationDialog(
+fun ExamenDialog(
     modifier: Modifier = Modifier,
-    rdv: Rdv,
+    examen: Examen,
     onDismiss:()->Unit
 ) {
     var poids by remember { mutableStateOf("") }
@@ -188,8 +188,8 @@ fun ConsultationDialog(
 
 @Composable
 @Preview(showBackground = true)
-fun ConsultationDialogPreview(modifier: Modifier = Modifier) {
+fun ExamenDialogPreview(modifier: Modifier = Modifier) {
     Column {
-        ConsultationDialog(rdv =Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête")) { }
+        Examen(dateExamen = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), nomExamen = "Examen", typeExamen = "Type d'examen")
     }
 }

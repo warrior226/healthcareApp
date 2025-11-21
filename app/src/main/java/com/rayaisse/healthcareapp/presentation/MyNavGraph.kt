@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import kotlinx.serialization.Serializable
 import androidx.navigation.compose.composable
 import com.rayaisse.healthcareapp.presentation.ConsultationScreen
+import com.rayaisse.healthcareapp.presentation.ResultatScreen
 
 @Composable
 fun MyNavGraph(navController: NavHostController){

@@ -1,4 +1,4 @@
-package com.rayaisse.healthcareapp.data
+package com.rayaisse.healthcareapp.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -6,13 +6,12 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity(tableName = "rdv")
-data class Rdv(
+@Entity(tableName = "user")
+data class User(
     @PrimaryKey
     val id:Int=0,
     var userId:Int=0,
-    var dateRdv:String="",
-    var heureRdv:String="",
-    var motifRdv:String="",
-    var status: String=""
+    var patientId:Int=0,
+    var medecinId:Int=0,
+    var dateCreation:String=""
 ): Parcelable

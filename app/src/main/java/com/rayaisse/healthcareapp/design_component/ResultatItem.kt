@@ -9,8 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.RemoveRedEye
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -25,13 +24,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.rayaisse.healthcareapp.data.model.Disponibilite
+import com.rayaisse.healthcareapp.data.model.Examen
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
 @Composable
-fun DisponibiliteItem(modifier: Modifier = Modifier,disponibilite: Disponibilite, onDeleteClick:()->Unit,onEditClick:()->Unit,textSize: TextUnit) {
+fun ResultatItem(modifier: Modifier = Modifier,examen: Examen,onViewClick:()->Unit,textSize: TextUnit) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = CardDefaults.cardElevation(5.dp),
@@ -48,31 +47,24 @@ fun DisponibiliteItem(modifier: Modifier = Modifier,disponibilite: Disponibilite
                 modifier = Modifier.weight(1f)
             ) {
                 Text(
-                    text = disponibilite.dateDisponibilite
+                    text =examen.dateExamen
                 )
                 Text(
-                    text="De ${disponibilite.heureDebut} à ${disponibilite.heureFin} "
+                    text = "Nom de l'examen: ${examen.nomExamen}"
+                )
+                Text(
+                    text="type d'examen:${examen.typeExamen}"
                 )
             }
             Row(
-                modifier = Modifier.weight(1f),
                 horizontalArrangement = Arrangement.End
             ) {
-                IconButton(
-                    onClick ={onDeleteClick}
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Delete,
-                        tint = Color.Red,
-                        contentDescription = "Delete"
-                    )
-                }
                 Spacer(modifier = Modifier.width(10.dp))
                 IconButton(
-                    onClick = {onEditClick}
+                    onClick = {onViewClick()}
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Edit,
+                        imageVector = Icons.Default.RemoveRedEye,
                         tint = MaterialTheme.colorScheme.primary,
                         contentDescription = "Edit"
                     )
@@ -87,20 +79,14 @@ fun DisponibiliteItem(modifier: Modifier = Modifier,disponibilite: Disponibilite
 
 @Composable
 @Preview(showBackground = true)
-fun DisponibiliteItemPreview() {
+fun ResultatItemPreview() {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        DisponibiliteItem(
-            disponibilite = Disponibilite(
-                dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)),
-                heureDebut = "9h10",
-                heureFin = "10h10"
-            ),
-            onEditClick = {},
-            onDeleteClick = {},
+        ResultatItem(
+            examen = Examen(dateExamen = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), nomExamen = "Examen", typeExamen = "Type d'examen"),
+            onViewClick = {},
             textSize = 5.sp
         )
-
     }
 }

@@ -1,4 +1,4 @@
-package com.rayaisse.healthcareapp.data
+package com.rayaisse.healthcareapp.data.model
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -22,4 +22,5 @@ data class Consultation(
     var observation:String="",
     var recommandation:String="",
     var dateProchaineVisite:String="",
+    var dateCreation:String=""
 ): Parcelable

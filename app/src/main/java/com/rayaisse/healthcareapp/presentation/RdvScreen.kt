@@ -44,7 +44,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.rayaisse.healthcareapp.data.Rdv
+import com.rayaisse.healthcareapp.data.model.Rdv
 import com.rayaisse.healthcareapp.design_component.RdvItem
 import com.rayaisse.healthcareapp.presentation.dialog.ConsultationDialog
 import com.rayaisse.healthcareapp.utils.DeviceConfiguration
@@ -63,11 +63,11 @@ fun RdvScreen(modifier: Modifier = Modifier) {
 
     val items= listOf(
         Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête"),
-        Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête"),
-        Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête"),
-        Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête"),
-        Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête"),
-        Rdv(dateRdv = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h10", motifRdv = "Maux de tête")
+        Rdv(dateRdv = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "13h30", motifRdv = "Maux de tête"),
+        Rdv(dateRdv = LocalDate.now().plusDays(2).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "10h30", motifRdv = "Maux de ventre"),
+        Rdv(dateRdv = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "15h30", motifRdv = "Insomnie"),
+        Rdv(dateRdv = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "9h30", motifRdv = "Diarrhée"),
+        Rdv(dateRdv = LocalDate.now().plusDays(5).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureRdv = "10h30", motifRdv = "Vomissement")
     )
 
     Scaffold(
@@ -153,7 +153,7 @@ fun RdvScreen(modifier: Modifier = Modifier) {
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Text(
-                                        text = "100", // Replace with your actual rdv count
+                                        text = "7", // Replace with your actual rdv count
                                         style = MaterialTheme.typography.labelSmall,
                                         color = MaterialTheme.colorScheme.onError,
                                         fontWeight = FontWeight.Bold

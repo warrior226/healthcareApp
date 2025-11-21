@@ -5,7 +5,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
@@ -28,12 +27,9 @@ import androidx.compose.material.icons.filled.ArrowDownward
 import androidx.compose.material.icons.filled.ArrowUpward
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CardElevation
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
@@ -48,14 +44,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rayaisse.healthcareapp.R
-import com.rayaisse.healthcareapp.data.Disponibilite
+import com.rayaisse.healthcareapp.data.model.Disponibilite
 import com.rayaisse.healthcareapp.design_component.DisponibiliteItem
 import com.rayaisse.healthcareapp.utils.DeviceConfiguration
 import java.time.LocalDate
@@ -69,12 +64,12 @@ fun AccueilScreen(modifier: Modifier = Modifier) {
     var listDisponibilite = ArrayList<Disponibilite>()
     val listState = rememberLazyListState()
     val items= listOf(
-        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h10", heureFin = "10h10"),
-        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h10", heureFin = "10h10"),
-        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h10", heureFin = "10h10"),
-        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h10", heureFin = "10h10"),
-        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h10", heureFin = "10h10"),
-        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h10", heureFin = "10h10")
+        Disponibilite(dateDisponibilite = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h30", heureFin = "13h30"),
+        Disponibilite(dateDisponibilite = LocalDate.now().plusDays(1).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h30", heureFin = "13h30"),
+        Disponibilite(dateDisponibilite = LocalDate.now().plusDays(2).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h30", heureFin = "13h30"),
+        Disponibilite(dateDisponibilite = LocalDate.now().plusDays(3).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h30", heureFin = "13h30"),
+        Disponibilite(dateDisponibilite = LocalDate.now().plusDays(4).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h30", heureFin = "13h30"),
+        Disponibilite(dateDisponibilite = LocalDate.now().plusDays(5).format(DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.FRENCH)), heureDebut = "9h30", heureFin = "13h30")
     )
 
     Scaffold(
